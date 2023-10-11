@@ -1,0 +1,12 @@
+train: C:\Basketball Highlights with Object Tracking\data\train\images
+val: C:\Basketball Highlights with Object Tracking\data\valid\images
+test: C:\Basketball Highlights with Object Tracking\data\test\images
+
+nc: 3
+names: ['basketball', 'rim', 'sports ball']
+
+
+train_label: C:\Basketball Highlights with Object Tracking\data\train\labels
+val_label: C:\Basketball Highlights with Object Tracking\data\valid\labels
+test_label: C:\Basketball Highlights with Object Tracking\data\test\labels
+
