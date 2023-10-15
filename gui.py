@@ -4,9 +4,10 @@ from ultralytics import YOLO
 import cv2
 from pathlib import Path
 from PIL import Image, ImageTk
+import torch
 
 # Load trained model
-model_path = Path("runs/detect/train8/weights/best.pt")
+model_path = Path("runs/detect/train9/weights/best.pt")
 model = YOLO(str(model_path))
 
 def open_file():
@@ -19,6 +20,13 @@ def open_file():
         # Extracting the first prediction result
         pred = results[0]
         
+        # If basketball is detected, draw bounding boxes
+        if pred.boxes is not None and pred.boxes.xyxy.shape[0] > 0:
+            # Extract bounding box coordinates
+            x1, y1, x2, y2 = map(int, pred.boxes.xyxy[0].tolist())
+            # Draw bounding box
+            cv2.rectangle(image, (x1, y1), (x2, y2), (0, 255, 0), 2)
+        
         # Rendering and displaying the image
         image_rgb = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
         image_pil = Image.fromarray(image_rgb)
@@ -27,7 +35,7 @@ def open_file():
         label_image.image = image_tk
         
         # Displaying detection result
-        pred_label = "Basketball Detected" if len(pred) > 0 else "No Basketball Detected"
+        pred_label = "Basketball Detected" if pred.boxes is not None and pred.boxes.xyxy.shape[0] > 0 else "No Basketball Detected"
         label_result.config(text=pred_label)
 
 root = tk.Tk()
