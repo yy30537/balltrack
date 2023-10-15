@@ -3,7 +3,7 @@ from pathlib import Path
 import matplotlib.pyplot as plt
 
 # Load trained model
-model_path = Path("runs/detect/train9/weights/best.pt")
+model_path = Path("runs/detect/train11/weights/best.pt")
 model = YOLO(str(model_path))
 
 # Load test dataset
