@@ -44,16 +44,6 @@ To install:
     pip install -r requirements.txt
     ```
 
-    If you don't have a `requirements.txt` file, create one in the project root directory with the following content:
-    ```
-    torch>=1.10.0
-    torchvision>=0.11.1
-    opencv-python-headless>=4.5.4
-    Pillow>=8.4.0
-    ultralytics>=8.0.0
-    tk>=0.1.0
-    ```
-
 ## Using Basketball Detection Application
 
 To use the Basketball Detection Application, follow these steps:
@@ -67,22 +57,3 @@ To use the Basketball Detection Application, follow these steps:
 
 3. The application will process the file and highlight detected basketballs directly in the GUI.
 
-## Contributing to Basketball Detection Application
-
-To contribute to Basketball Detection Application, follow these steps:
-
-1. Fork this repository.
-2. Create a branch: `git checkout -b <branch_name>`.
-3. Make your changes and commit them: `git commit -m '<commit_message>'`
-4. Push to the original branch: `git push origin <project_name>/<location>`
-5. Create the pull request.
-
-Alternatively, see the GitHub documentation on [creating a pull request](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request).
-
-## Contact
-
-If you want to contact me, you can reach me at `<your_email>@example.com`.
-
-## License
-
-This project uses the following license: [MIT License](<link>).
